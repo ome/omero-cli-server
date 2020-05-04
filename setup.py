@@ -17,11 +17,11 @@ from setuptools import setup, find_packages
 sys.path.append(".")
 from omeroserver.version import omeroserver_version as osv  # noqa
 
-names = ["debian-9", "debian-stretch", "ubuntu-16", "xenial"]
+names = ["debian-9", "debian-stretch", "ubuntu-16.04", "xenial"]
 
 
 def tables_package():
-    name = platform.platform()
+    name = platform.platform().lower()
     package_version = "tables"
     for n in names:
         if name.find(n) >= 0:
