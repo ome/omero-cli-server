@@ -10,23 +10,11 @@
 
 import os
 import sys
-import platform
 
 from setuptools import setup, find_packages
 
 sys.path.append(".")
 from omeroserver.version import omeroserver_version as osv  # noqa
-
-names = ["debian-9", "debian-stretch", "ubuntu-16.04", "xenial"]
-
-
-def tables_package():
-    name = platform.platform().lower()
-    package_version = "tables"
-    for n in names:
-        if name.find(n) >= 0:
-            package_version = "tables<3.6"
-    return package_version
 
 
 def read(fname):
@@ -65,7 +53,7 @@ setup(name="omero-server",
           'omero-py',
           # minimum requirements for `omero admin start`
           'omero-certificates',
-          tables_package(),
+          'tables',
       ],
       include_package_data=True,
       tests_require=['pytest'],
