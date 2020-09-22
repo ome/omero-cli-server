@@ -7,7 +7,7 @@
    Use is subject to license terms supplied in LICENSE.txt
 
 """
-
+from glob import glob
 import os
 import sys
 
@@ -23,6 +23,26 @@ def read(fname):
     :rtype : String
     """
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
+
+
+def parse_requirements(fname):
+    """
+    Utility function to parse requirements.txt files.
+    """
+    with open(os.path.join(os.path.dirname(__file__), fname)) as f:
+        txt = f.read().splitlines()
+        return [
+            line.strip() for line in txt if not line.strip().startswith('#')]
+
+
+def get_extras_require():
+    extras = {}
+    requirements_files = [os.path.basename(g) for g in glob(
+        os.path.join(os.path.dirname(__file__), 'requirements-*.txt'))]
+    for fname in requirements_files:
+        if fname != 'requirements-pinned.txt':
+            extras[fname[13:-4]] = parse_requirements(fname)
+    return extras
 
 
 setup(name="omero-server",
@@ -48,17 +68,8 @@ setup(name="omero-server",
       license='GPLv2+',
       packages=find_packages(exclude=("test",))+["omero.plugins"],
       python_requires='>=3',
-      install_requires=[
-          # requires Ice (use wheel for faster installs)
-          'omero-py',
-          # minimum requirements for `omero admin start`
-          'omero-certificates',
-      ],
+      install_requires=parse_requirements('requirements-pinned.txt'),
       include_package_data=True,
       tests_require=['pytest'],
-      extras_require={
-        "debian9": ["tables<3.6"],
-        "ubuntu1604": ["tables<3.6"],
-        "default": ["tables"],
-      }
+      extras_require=get_extras_require(),
       )

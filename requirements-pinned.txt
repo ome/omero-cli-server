@@ -1,0 +1,16 @@
+omero-py==5.8.0
+
+# https://github.com/ome/omero-py/blob/v5.8.0/setup.py#L217-L224
+appdirs==1.4.4
+future==0.18.2
+numpy==1.19.1
+Pillow==7.2.0
+PyYAML==5.3.1
+requests==2.24.0
+# To speed this up install a distribution-specific wheel before installing
+# this package (wheels cannot be included in requirements)
+zeroc-ice==3.6.5
+
+# minimum requirements for 'omero admin start'
+omero-certificates==0.2.0
+# tables==3.6.1  # Debian9/Ubuntu1604 won't work with 3.6.1
