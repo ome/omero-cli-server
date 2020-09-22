@@ -18,6 +18,7 @@ USER tox
 COPY --chown=tox:tox *.py /src/
 COPY --chown=tox:tox README.rst /src
 COPY --chown=tox:tox MANIFEST.in /src
+COPY --chown=tox:tox *.txt /src/
 COPY --chown=tox:tox omero /src/omero
 COPY --chown=tox:tox omeroserver /src/omeroserver
 WORKDIR /src
