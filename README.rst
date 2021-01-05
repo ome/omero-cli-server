@@ -1,3 +1,9 @@
+.. image:: https://github.com/ome/omero-cli-server/workflows/Tox/badge.svg
+   :target: https://github.com/ome/omero-cli-server/actions
+
+.. image:: https://badge.fury.io/py/omero-cli-server.svg
+    :target: https://badge.fury.io/py/omero-cli-server
+
 OMERO.server CLI Plugin
 =======================
 
