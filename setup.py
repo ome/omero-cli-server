@@ -51,6 +51,8 @@ setup(
     install_requires=[
         # requires Ice (use wheel for faster installs)
         "omero-py",
+        # dependency of the Populate Metadata script
+        "omero-metadata",
         # minimum requirements for `omero admin start`
         "omero-certificates",
     ],
