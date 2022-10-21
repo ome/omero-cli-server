@@ -100,7 +100,7 @@ omero-cli-server is released under the GPL.
 Copyright
 ---------
 
-2020, The Open Microscopy Environment
+2020-2022, The Open Microscopy Environment
 
 .. _OMERO: https://www.openmicroscopy.org/omero
 .. _OMERO.py: https://pypi.python.org/pypi/omero-py
