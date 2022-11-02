@@ -53,12 +53,8 @@ setup(
         "omero-py",
         # minimum requirements for `omero admin start`
         "omero-certificates",
+        "tables",
     ],
     include_package_data=True,
     tests_require=["pytest"],
-    extras_require={
-        "debian9": ["tables<3.6"],
-        "ubuntu1604": ["tables<3.6"],
-        "default": ["tables"],
-    },
 )
