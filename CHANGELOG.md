@@ -7,8 +7,8 @@
 - Update GitHub actions [#27](https://github.com/ome/omero-cli-server/pull/27)
 
 
-0.2.0 (Nov 2022)
-----------------
+0.2.0 (November 2022)
+---------------------
 
 - Remove extra step to install tables [#24](https://github.com/ome/omero-cli-server/pull/24)
 
