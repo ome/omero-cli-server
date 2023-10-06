@@ -53,7 +53,7 @@ setup(
         "omero-py",
         # minimum requirements for `omero admin start`
         "omero-certificates",
-        "tables",
+        "tables<3.9",
     ],
     include_package_data=True,
     tests_require=["pytest"],
