@@ -1,3 +1,8 @@
+0.4.0 (October 2023)
+--------------------
+
+- Lift tables cap [#35](https://github.com/ome/omero-cli-server/pull/35)
+
 0.3.0 (October 2023)
 --------------------
 
