@@ -1,1 +1,1 @@
-omeroserver_version = "0.3.1.dev0"
+omeroserver_version = "0.4.0"
