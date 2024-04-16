@@ -1,12 +1,10 @@
-FROM centos:centos7
+FROM rockylinux:9
+RUN dnf install -y glibc-locale-source glibc-langpack-en
 RUN localedef -i en_US -f UTF-8 en_US.UTF-8
 ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
-RUN yum install -y centos-release-scl \
- && yum install -y rh-python36 \
- && yum install -y python-virtualenv \
- && yum install -y openssl-devel git
-ENV PATH=/opt/rh/rh-python36/root/bin/:$PATH
-RUN python -m venv /py3 && /py3/bin/pip install -U pip tox future wheel
+RUN dnf install -y python3 \
+ && dnf install -y openssl-devel git
+RUN python3 -m venv /py3 && /py3/bin/pip install -U pip tox future wheel
 
 ENV VIRTUAL_ENV=/py3
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
