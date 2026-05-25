@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-   Copyright 2020 The Open Microscopy Environment
-   All rights reserved.
+Copyright 2020 The Open Microscopy Environment
+All rights reserved.
 
-   Use is subject to license terms supplied in LICENSE.txt
+Use is subject to license terms supplied in LICENSE.txt
 
 """
 
